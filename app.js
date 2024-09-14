@@ -100,7 +100,9 @@ app.use('/user',signupRoute);
 
 
 app.all("*", (req,res,next)=>{
-    next(new expressErr("Page Not Found",404))   
+    // next(new expressErr("Page Not Found",404))   
+    res.status(404).render('errors/404'); // Render your custom 404 page
+
     // next(new expressErr(404,"Page not found!"));   
 });
 
