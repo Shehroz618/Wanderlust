@@ -1,0 +1,22 @@
+<%- layout("/layouts/boilerplate.ejs") %>
+<div class="row justify-content-center">
+ 
+    <% for(let list of singleList){ %>
+      <a class="cardAncor flex " href="/listing/<%= list.id %>/listinfo" style="text-decoration: none; color: black; ">
+       <div class="card listing-card " style="width: 23rem;">
+         <img class="card-img-top" src="<%= list.image.url %>" alt="Card image cap" style="height: 18rem; width: 85%;">
+         <div class="card-body" >
+         <div>  <b class="card-text"><%= list.title %></b> <br></div>
+         <div style="display: flex; justify-content: center;">             
+           PKR: <%= list.price ? list.price.toLocaleString("en-PK") : "Price not available" %>/Night <i class="gst">+18% GST</i>
+         </div>
+           
+           
+         </div>
+       </div>  
+      </a>
+   
+         <% } %>
+ 
+
+  </div>

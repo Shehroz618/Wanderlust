@@ -1,0 +1,42 @@
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"><i class="fa-solid fa-compass"></i></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link " href="/listing">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="/listing">All Listing</a>
+         </div>
+
+         <form class="form-inline  ml-auto " action="/listing/filter/searchbtn" method="POST">
+          <input class="form-control mr-sm-2 search-input" name="query" type="search" placeholder="Search destinations" aria-label="Search">
+          <select class="form-control mr-sm-2" name="country">
+            <option value="">Select Country</option>
+            <option value="USA">USA</option>
+            <option value="Canada">Canada</option>
+            <!-- Add more countries here -->
+          </select>
+          <select class="form-control mr-sm-2" name="themeForm">
+            <option value="">Select Theme</option>
+            <option value="business">business</option>
+            <option value="picninc">picninc</option>
+            <!-- Add more themes here -->
+          </select>
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search <i class="fas fa-search search-icon"></i></button>
+        </form>
+
+         <div class="navbar-nav ml-auto">
+           <a class="nav-item nav-link" href="/listing/addList">Add New list</a>
+           <% if(!currUser){ %>
+            <a class="nav-item nav-link" href="/user/signup"><b>Sign-Up</b></a>
+            <a class="nav-item nav-link" href="/user/login"><b>Login</b></a>
+           <% }  else{ %>
+            <a class="nav-item nav-link" href="/user/logout"><b>logout</b></a>
+           <% } %>
+          </div>
+
+         
+        </div>
+      </nav>

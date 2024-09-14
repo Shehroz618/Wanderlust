@@ -1,0 +1,230 @@
+body{
+   margin: 0;
+   padding: 0;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+hr{
+    border: 1px solid black; /* Adjust color and thickness as needed */
+    margin: 5px 0; /* Adds some space around the line */
+}
+.container{
+    /* border: 2px solid red; */
+    display: flex;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    justify-content: center;
+    /* gap: 2.4rem; */
+}
+
+.navbar-brand i{
+    background-color: white;
+    color: rgb(232, 100, 116);
+    font-size: 2rem;
+}
+.card img {
+    width: 70%;
+    height: 100%; /* Maintain aspect ratio */
+    max-height: 60%;
+    object-fit: cover; /*cover; Ensures the image covers the entire card without distortion*/
+    /* border-top-left-radius: 0.5rem ;
+    border-top-right-radius: 0.5rem; */
+    border-radius: 0.2rem;
+
+}
+
+
+.listing-card {
+    width: 200px; /* Fixed width */
+    height: 300px; /* Fixed height */
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    margin-top: 2rem;
+    border-radius: 0.5rem;
+    height: auto;
+    
+    
+   
+}
+
+.card{
+    border: 1px solid black;
+}
+
+    
+.cardAncor:hover{
+   opacity: 0.8;
+   
+}
+.ft-social-links{
+    /* background-color: black; */
+}
+
+.container-ft{
+    
+    margin-top: 1.4rem;
+    position: static;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* border: 2px solid; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.4rem;
+    background-color: whitesmoke
+
+}
+
+.ft-social-links{
+    /* border: 2px solid red; */
+    width: 100%;
+   text-align: center;
+   margin-bottom: 0.4rem;
+}
+
+
+.ft-social-links a i{
+    font-size: 1.2rem;
+    margin-right: 0.4rem;
+    background-color: white;
+    color: black;
+}
+
+.copyright{
+    margin-bottom: 0.4rem;
+}
+
+.ft-blogs .anchor{
+    color: black;
+    text-decoration: none;
+}
+
+.ft-blogs .anchor:hover{
+    color: rgb(106, 122, 116);
+}
+
+.listing-card{
+    border: none !important;
+    margin-bottom: 2rem;
+    
+}
+
+.card-body{
+    padding: 0;
+    padding-left: 0.2rem;
+}
+
+.row form{
+    width: 100%;
+}
+
+.singleItem-img{
+    width: 100% !important;
+    height: 300px !important;
+    object-fit: cover;
+}
+
+.listing-card{
+    display: flex  !important;
+    justify-content: center;
+    background-color: white;
+}
+
+.parent{
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100%;
+}
+
+/* .myBtn{
+    width: 100%;
+}
+.myBtn .btn{
+    display: block;
+} */
+
+.myBtn{
+    display: flex;
+}
+.myBtn button{
+    width: 100%;
+
+}
+
+.card-img-top{
+    align-self: center;
+}
+
+.card-body{
+    text-align: center;
+}
+
+.homepage-icons{
+    display: flex; 
+    gap: 2rem; 
+    justify-content: center;
+    margin-top: 1rem;
+    background-color: rgb(232, 227, 221);
+    /* height: 50px; */
+    padding-top: 10px;
+}
+
+
+
+/* .carousel-item-next, .carousel-item-prev, .carousel-item.active{
+    display: flex;
+} */
+
+
+/* .icon-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} */
+
+#map{
+    height: 500px;
+    width: 70vw;
+}
+
+/* ________________________carousal css______________ */
+.carousel-control-next-icon{
+    background-color: black;
+    color: white;
+}
+
+#carouselExampleControls{
+    width: 100%;
+    background-color: aquamarine;
+}
+
+.gst{
+    display: block;
+}
+.gst-active{
+   
+    display: none;
+}
+
+.btn-outline-success{
+    border-radius: 2rem;
+    padding: 0.3rem 1rem 0.3rem 1rem;
+    font-size: 1.1rem;
+
+}
+
+.search-input{
+    
+    border-radius: 2rem;
+    padding: 0.3rem 1rem 0.3rem 1rem;
+}
+
+.search-icon{
+    font-size: 0.9rem;
+
+}
+

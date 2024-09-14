@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%  if(successMsg && successMsg.length ){ %> 
+        <div class="alert alert-success col-12" role="alert" >
+            <%= successMsg %>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+  
+              </button>
+          </div>
+    <% } %> 
+
+    <%  if(deleteMsg && deleteMsg.length ){ %> 
+        <div class="alert alert-danger col-12" role="alert" >
+            <%= deleteMsg %>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+  
+              </button>
+          </div>
+        <% } %> 
+
+    <%  if(errorMsg && errorMsg.length ){ %> 
+        <div class="alert alert-danger col-12" role="alert" >
+            <%= errorMsg %>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+  
+              </button>
+          </div>
+        <% } %> 
+
+</body>
+</html>

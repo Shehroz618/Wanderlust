@@ -1,0 +1,147 @@
+
+<%- layout("/layouts/boilerplate.ejs") %>
+
+ <!-- <div class="col-8 offset-1" >
+    <h2>Adding a New List!</h2>
+    <form  method="post" action="/listing/addList/successAdded" class="needs-validation" novalidate>
+
+      <div class="form-group">
+        <label for="title" class="form-label">title:</label>
+        <input type="text" name="title" class="form-control" id="title" required >
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+        <div class="invalid-feedback">
+          Should be enter any title
+        </div>
+      </div>
+      
+     
+  
+      <div class="form-group">
+        <label for="description">description:</label>
+        <textarea name="description" class="form-control" id="description" required></textarea> 
+        <div class="invalid-feedback">
+          Please enter a short description
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="imgUrl">Image Url:</label>
+        <input type="url" name="url" class="form-control" id="imgUrl">
+      </div>
+
+      <div class="row">
+        <div class="form-group col-md-4">
+          <label for="price">Price:</label>
+          <input name="price" id="price" class="form-control" required> 
+          <div class="invalid-feedback">
+            Should be enter valid price
+          </div>
+        </div>
+    
+        <div class="form-group col-md-8">
+          <label for="location">location:</label>
+          <input type="text" name="location" id="location" class="form-control" required> 
+          <div class="invalid-feedback">
+            Should be enter valid location
+          </div>
+        </div>
+     
+      </div>
+  
+      
+  
+      <div class="form-group">
+        <label for="">Country</label>
+        <input type="text" name="country" id="country" class="form-control" required>
+        <div class="invalid-feedback">
+          Should be enter valid country
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Add List!</button>
+    </form>
+  </div> -->
+
+ <div class="col-8 offset-1" >
+    <h2>Adding a New List!</h2>
+    <form  method="post" action="/listing/addList/successAdded" class="needs-validation" enctype="multipart/form-data" novalidate>
+
+      <div class="form-group">
+        <label for="title" class="form-label">title:</label>
+        <input type="text" name="List[title]" class="form-control" id="title" required >
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+        <div class="invalid-feedback">
+          Should be enter any title
+        </div>
+      </div>
+      
+     
+  
+      <div class="form-group">
+        <label for="description">description:</label>
+        <textarea name="List[description]" class="form-control" id="description" required></textarea> 
+        <div class="invalid-feedback">
+          Please enter a short description
+        </div>
+      </div>
+  
+      <!-- <div class="form-group">
+        <label for="imgUrl">Image Url:</label>
+        <input type="url" name="List[image][url]" class="form-control" id="imgUrl">
+      </div> -->
+      <div class="form-group">
+        <label for="image">Upload Image</label>
+        <input type="file" name="List[image][url]" class="form-control" id="image">
+      </div>
+
+      <div class="row">
+        <div class="form-group col-md-4">
+          <label for="price">Price:</label>
+          <input type="number" name="List[price]" id="price" class="form-control" required> 
+          <div class="invalid-feedback">
+            Should be enter valid price
+          </div>
+        </div>
+    
+        <div class="form-group col-md-8">
+          <label for="location">location:</label>
+          <input type="text" name="List[location]" id="location" class="form-control" required> 
+          <div class="invalid-feedback">
+            Should be enter valid location
+          </div>
+        </div>
+     
+      </div>
+  
+      
+  
+      <div class="form-group">
+        <label for="country">Country</label>
+        <input type="text" name="List[country]" id="country" class="form-control" required>
+        <div class="invalid-feedback">
+          Should be enter valid country
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="theme">Select the theme</label>
+        <select name="List[theme]" id="theme">
+          <option value="business">business</option>
+          <option value="travel">travel</option>
+          <option value="picninc">picninc</option>
+          <option value="wedding">wedding</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Add List!</button>
+    </form>
+  </div>
+
+
+
+
+
+
+

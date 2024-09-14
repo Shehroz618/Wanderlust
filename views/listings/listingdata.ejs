@@ -1,0 +1,191 @@
+
+<%- layout("/layouts/boilerplate.ejs") %>
+
+
+    
+<style>
+  .icon-carousel{
+    display: flex;
+  }
+  .icon-carousel .icon-item {
+    text-align: center;
+    padding: 10px;
+  }
+
+  .icon-item i {
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  .icon-item p {
+    margin-top: 5px;
+    font-size: 10px;
+    cursor: pointer;
+  }
+
+  .slick-prev, .slick-next {
+  background-color: #333;
+  color: white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 16px;
+  line-height: 30px;
+  text-align: center;
+  z-index: 1000;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.slick-prev {
+  left: -40px; /* Adjust left positioning */
+}
+
+.slick-next {
+  right: -40px; /* Adjust right positioning */
+}
+</style>
+  
+ 
+<div class="icon-carousel">
+  <div class="icon-item" data-theme="business">
+    <i class="fa-solid fa-hotel"></i>
+    <p>business</p>
+  </div>
+
+  <div class="icon-item" data-theme="picninc">
+    <i class="fa-solid fa-calendar-alt"></i>
+    <p>picninc</p>
+  </div>
+  <div class="icon-item">
+    <i class="fa-solid fa-map-marked-alt"></i>
+    <p>Location</p>
+  </div>
+  <div class="icon-item">
+    <i class="fa-solid fa-plane"></i>
+    <p>Flight</p>
+  </div>
+  <div class="icon-item">
+    <i class="fa-solid fa-car"></i>
+    <p>Car</p>
+  </div>
+  <div class="icon-item">
+    <i class="fa-solid fa-umbrella-beach"></i>
+    <p>Vacation</p>
+  </div>
+  <div class="icon-item">
+    <i class="fa-solid fa-users"></i>
+    <p>Group</p>
+  </div>
+  <div class="icon-item">
+    <i class="fa-solid fa-credit-card"></i>
+    <p>Payment</p>
+  </div>
+  <div class="icon-item">
+    <i class="fa-solid fa-concierge-bell"></i>
+    <p>Service</p>
+  </div>
+  <div class="icon-item">
+    <i class="fa-solid fa-suitcase"></i>
+    <p>Travel</p>
+  </div>
+  <div class="icon-item">
+    <i class="fa-solid fa-ship"></i>
+    <p>Cruises</p>
+  </div>
+  <div class="icon-item">
+    <i class="fa-solid fa-bus"></i>
+    <p>Bus</p>
+  </div>
+  <div class="icon-item">
+    <i class="fa-solid fa-taxi"></i>
+    <p>Taxi</p>
+  </div>
+  <div class="icon-item">
+    <i class="fa-solid fa-bed"></i>
+    <p>Accommodations</p>
+  </div>
+  <div class="icon-item">
+    <i class="fa-solid fa-shopping-bag"></i>
+    <p>Shopping</p>
+  </div>
+  <div class="form-check form-switch">
+    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+    <label class="form-check-label" for="flexSwitchCheckDefault">Default switch checkbox input</label>
+</div>
+  
+</div>
+  
+
+
+
+
+    <div class="row justify-content-center">
+ 
+      <% for(let list of listing){ %>
+        <a class="cardAncor flex " href="/listing/<%= list.id %>/listinfo" style="text-decoration: none; color: black; ">
+         <div class="card listing-card " style="width: 23rem;">
+           <img class="card-img-top" src="<%= list.image.url %>" alt="Card image cap" style="height: 18rem; width: 85%;">
+           <div class="card-body" >
+           <div>  <b class="card-text"><%= list.title %></b> <br></div>
+           <div style="display: flex; justify-content: center;">             
+             PKR: <%= list.price ? list.price.toLocaleString("en-PK") : "Price not available" %>/Night <i class="gst">+18% GST</i>
+           </div>
+             
+             
+           </div>
+         </div>  
+        </a>
+     
+           <% } %>
+   
+  
+    </div>
+
+
+    <script type="text/javascript">
+      
+      const gstBtn = document.querySelector("#flexSwitchCheckChecked");
+      gstBtn.addEventListener("click",()=>{
+        const gstTags = document.querySelectorAll('.gst')
+        for(let gst of gstTags){
+          gst.classList.toggle('gst-active');  
+        }
+      })
+
+      $(document).ready(function(){
+      $('.icon-carousel').slick({
+        slidesToShow: 4,  // Show 4 icons at once
+        slidesToScroll: 1, // Scroll 1 icon at a time
+        prevArrow: '<button class="slick-prev">←</button>',
+        nextArrow: '<button class="slick-next">→</button>',
+        responsive: [
+          {
+            breakpoint: 768,
+            settings: {
+              slidesToShow: 2, // Show 2 icons on smaller screens
+              slidesToScroll: 1
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1, // Show 1 icon on mobile
+              slidesToScroll: 1
+            }
+          }
+        ]
+      });
+    });
+     
+    const iconItems = document.querySelectorAll('.icon-item');
+
+    for(let iconItem of iconItems){
+      iconItem.addEventListener("click",function(){
+        const theme = this.getAttribute('data-theme');
+        window.location.href = `/listing/filter?theme=${theme}`;
+      })
+    }
+    </script>

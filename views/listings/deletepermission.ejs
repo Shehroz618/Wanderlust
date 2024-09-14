@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>Do you want to delete this?</h4>
+    <form id="deleteForm" method="POST" action="/listing/<%= singleList._id %>/deletedSuccess?_method=delete">
+        <button type="button" class="yesBtn">Yes</button>
+    <button type="button" class="noBtn">No</button>
+    </form>
+    
+
+</body>
+
+<script>
+    document.querySelector('.yesBtn').addEventListener('click', () => {
+        document.getElementById('deleteForm').submit();
+      
+    });
+
+    document.querySelector('.noBtn').addEventListener('click', (event) => {
+        window.location.href = '/listing';
+        // Optionally, you can add additional logic here if needed
+    });
+</script>
+</html>
